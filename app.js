@@ -4,12 +4,17 @@ const db = require('./config/keys').mongoURI;
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const passport = require('passport');
 
+// Require Routes
 const users = require('./routes/api/users');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
 mongoose
   .connect(db, { useNewUrlParser: true })

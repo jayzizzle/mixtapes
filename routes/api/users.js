@@ -69,7 +69,7 @@ router.post('/login', (req, res) => {
 
   User.findOne({ email }).then((user) => {
     if (!user) {
-      errors.email = 'This user does not exist';
+      errors.email = 'User does not exist.';
       return res.status(400).json(errors);
     }
 
@@ -94,11 +94,23 @@ router.post('/login', (req, res) => {
           }
         );
       } else {
-        errors.password = 'Incorrect password';
+        errors.password = 'Incorrect password.';
         return res.status(400).json(errors);
       }
     });
   });
 });
+
+router.get(
+  '/current',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      handle: req.user.handle,
+      email: req.user.email,
+    });
+  }
+);
 
 module.exports = router;
