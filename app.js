@@ -5,6 +5,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+const users = require('./routes/api/users');
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -13,6 +15,9 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch((error) => console.log(error));
+
+// Routes
+app.use('/api/users', users);
 
 app.get('/', (req, res) => res.send('Mixtapes'));
 
