@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Register = () => {
+const Register = (props) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -8,6 +8,13 @@ export const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let user = {
+      username: username,
+      email: email,
+      password: password,
+      password2: password2,
+    };
+    props.signup(user);
   };
 
   return (
@@ -49,3 +56,5 @@ export const Register = () => {
     </div>
   );
 };
+
+export default Register;
