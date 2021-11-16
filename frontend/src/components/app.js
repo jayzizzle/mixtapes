@@ -1,13 +1,15 @@
 import React from 'react';
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Register } from './session/register';
 
 const App = () => (
   <>
     <div>
-      <h1>Mixtapes</h1>
-      <Routes></Routes>
+      <Routes>
+        <Route exact path='/register' element={<Register />} />
+      </Routes>
     </div>
   </>
 );
