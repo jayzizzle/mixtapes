@@ -1,34 +1,22 @@
 import React, { useState } from 'react';
 
-const Register = (props) => {
-  const [username, setUsername] = useState('');
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [password2, setPassword2] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
-      username: username,
       email: email,
       password: password,
-      password2: password2,
     };
-    props.signup(user);
+    props.login(user);
   };
 
   return (
     <div>
-      <h2>Register</h2>
+      <h2>Log In</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Enter Username'
-          autoComplete='username'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
         <input
           type='email'
           placeholder='Enter Email'
@@ -44,17 +32,10 @@ const Register = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
-        <input
-          type='password'
-          placeholder='Confirm Password'
-          value={password2}
-          onChange={(e) => setPassword2(e.target.value)}
-        />
-        <br />
-        <button>Register</button>
+        <button>Log In</button>
       </form>
     </div>
   );
 };
 
-export default Register;
+export default Login;
