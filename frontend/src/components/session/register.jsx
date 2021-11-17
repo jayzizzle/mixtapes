@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = (props) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +17,7 @@ const Register = (props) => {
       password: password,
       password2: password2,
     };
-    props.signup(user);
+    props.signup(user).then(() => navigate('/dashboard'));
   };
 
   return (
