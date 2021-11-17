@@ -25,3 +25,59 @@ h3 {
   font-weight: bolder;
   line-height: 1.2em;
 }
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.j-start {
+  justify-content: flex-start;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.j-end {
+  justify-content: flex-end;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.j-around {
+  justify-content: space-around;
+}
+
+.j-evenly {
+  justify-content: space-evenly;
+}
+
+.a-start {
+  align-items: flex-start;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.a-end {
+  align-items: flex-end;
+}
+
+.a-between {
+  align-items: space-between;
+}
+
+.a-around {
+  align-items: space-around;
+}
+
+.a-evenly {
+  align-items: space-evenly;
+}
