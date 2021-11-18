@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const RequireAuth = ({ children, loggedIn }) => {
   return loggedIn ? children : <Navigate to='/login' replace />;
@@ -29,10 +29,10 @@ const RequireAuth = ({ children, loggedIn }) => {
 //   />
 // );
 
-const mapStateToProps = (state) => ({
+const mSTP = (state) => ({
   loggedIn: state.session.isAuthenticated,
 });
 
-export const AuthRoute = connect(mapStateToProps)(RequireAuth);
+export const AuthRoute = connect(mSTP, null)(RequireAuth);
 
 // export const ProtectedRoute = connect(mapStateToProps)(Protected);
