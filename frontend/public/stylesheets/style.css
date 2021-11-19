@@ -146,6 +146,18 @@ button:hover {
   align-items: space-evenly;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 .orange {
   color: orange;
 }
