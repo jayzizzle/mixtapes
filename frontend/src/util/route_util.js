@@ -6,33 +6,13 @@ const RequireAuth = ({ children, loggedIn }) => {
   return loggedIn ? children : <Navigate to='/login' replace />;
 };
 
-// const Auth = ({ component: Component, path, loggedIn, exact }) => (
-//   <Route
-//     path={path}
-//     exact={exact}
-//     render={(props) =>
-//       !loggedIn ? (
-//         <Component {...props} />
-//       ) : (
-//         <Navigate replace to='/dashboard' />
-//       )
-//     }
-//   />
-// );
-
-// const Protected = ({ component: Component, loggedIn, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={(props) =>
-//       loggedIn ? <Component {...props} /> : <Navigate replace to='/login' />
-//     }
-//   />
-// );
+const RequireAbsence = ({ children, loggedIn }) => {
+  return !loggedIn ? children : <Navigate to='/dashboard' replace />;
+};
 
 const mSTP = (state) => ({
   loggedIn: state.session.isAuthenticated,
 });
 
 export const AuthRoute = connect(mSTP, null)(RequireAuth);
-
-// export const ProtectedRoute = connect(mapStateToProps)(Protected);
+export const AbsenceRoute = connect(mSTP, null)(RequireAbsence);
