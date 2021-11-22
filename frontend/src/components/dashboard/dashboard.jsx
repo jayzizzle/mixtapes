@@ -3,18 +3,20 @@ import React, { useState } from 'react';
 export const Dashboard = (props) => {
   const { username } = props.currentUser;
   const [searchQuery, setSearchQuery] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let items = [];
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (result) {
-        items = result.items;
-        console.log(items);
-      });
+    if (searchQuery) {
+      fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result.items[0]);
+          setThumbnail(result.items[0].volumeInfo.imageLinks.smallThumbnail);
+        });
+    } else {
+      console.log('Search field cannot be empty.');
+    }
   };
 
   return (
@@ -33,6 +35,8 @@ export const Dashboard = (props) => {
         <br />
         <button>Search</button>
       </form>
+      {thumbnail ? <img src={thumbnail} alt='thumbnail' /> : null}
+      <br />
       <button onClick={() => props.logout()}>Log Out</button>
     </div>
   );
