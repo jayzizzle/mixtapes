@@ -4,6 +4,7 @@ export const Dashboard = (props) => {
   const { username } = props.currentUser;
   const [searchQuery, setSearchQuery] = useState('');
   const [thumbnail, setThumbnail] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ export const Dashboard = (props) => {
         .then((result) => {
           console.log(result.items[0]);
           setThumbnail(result.items[0].volumeInfo.imageLinks.smallThumbnail);
+          setTitle(result.items[0].volumeInfo.title);
         });
     } else {
       console.log('Search field cannot be empty.');
@@ -36,6 +38,8 @@ export const Dashboard = (props) => {
         <button>Search</button>
       </form>
       {thumbnail ? <img src={thumbnail} alt='thumbnail' /> : null}
+      <br />
+      {title ? <h3>{title}</h3> : null}
       <br />
       <button onClick={() => props.logout()}>Log Out</button>
     </div>
