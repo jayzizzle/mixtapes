@@ -7,9 +7,40 @@ const BookSchema = new Schema(
       type: String,
       required: true,
     },
+    subtitle: {
+      type: String,
+      default: '',
+    },
     author: {
       type: String,
       required: true,
+    },
+    categories: {
+      type: String,
+      default: '',
+    },
+    description: {
+      type: String,
+      default: '',
+    },
+    publishedDate: {
+      type: String,
+      default: '',
+    },
+    pageCount: {
+      type: Number,
+    },
+    gBooksId: {
+      type: String,
+      required: true,
+    },
+    gBooksImageUrl: {
+      type: String,
+      default: '',
+    },
+    gBooksPreviewUrl: {
+      type: String,
+      default: '',
     },
   },
   { timestamps: true }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Dashboard = (props) => {
   const { username } = props.currentUser;
@@ -27,6 +28,13 @@ export const Dashboard = (props) => {
       <p>
         Welcome back, <span className='capitalize italic'>{username}</span>!
       </p>
+      <br />
+      <ul>
+        <li>
+          <Link to='/addbook'>Add A Book</Link>
+        </li>
+      </ul>
+      <br />
       <form onSubmit={handleSubmit}>
         <input
           type='text'
