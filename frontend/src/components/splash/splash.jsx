@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Splash = () => {
   return (
     <div>
-      <h1>Mixtapes</h1>
+      <h1>On Read</h1>
       <ul>
         <li>
           <Link to='/register'>Register</Link>
