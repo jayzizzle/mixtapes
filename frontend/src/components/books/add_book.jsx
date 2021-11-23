@@ -25,6 +25,7 @@ export const AddBook = () => {
 
   return (
     <div>
+      <h2>Add a Book</h2>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
