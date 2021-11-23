@@ -14,7 +14,9 @@ export const Dashboard = (props) => {
         .then((res) => res.json())
         .then((result) => {
           console.log(result.items[0]);
-          setThumbnail(result.items[0].volumeInfo.imageLinks.smallThumbnail);
+          if (result.items[0].volumeInfo.imageLinks) {
+            setThumbnail(result.items[0].volumeInfo.imageLinks.smallThumbnail);
+          }
           setTitle(result.items[0].volumeInfo.title);
         });
     } else {
