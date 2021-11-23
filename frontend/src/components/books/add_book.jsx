@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const AddBook = () => {
-  const { username } = props.currentUser;
+  // const { username } = props.currentUser;
   const [searchQuery, setSearchQuery] = useState('');
   const [thumbnail, setThumbnail] = useState('');
   const [title, setTitle] = useState('');

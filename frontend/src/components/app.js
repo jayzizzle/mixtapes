@@ -6,11 +6,21 @@ import DashboardContainer from './dashboard/dashboard_container';
 import RegisterContainer from './session/register_container';
 import LoginContainer from './session/login_container';
 import { Splash } from './splash/splash';
+import { AddBook } from './books/add_book';
 
 const App = () => (
   <>
     <div>
       <Routes>
+        <Route
+          exact
+          path='/addbook'
+          element={
+            <AuthRoute>
+              <AddBook />
+            </AuthRoute>
+          }
+        />
         <Route
           exact
           path='/dashboard'

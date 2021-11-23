@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Dashboard = (props) => {
   const { username } = props.currentUser;
-  const [searchQuery, setSearchQuery] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
-  const [title, setTitle] = useState('');
 
   return (
     <div>
