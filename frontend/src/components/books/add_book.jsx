@@ -8,6 +8,7 @@ export const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (thumbnail) setThumbnail('');
     if (searchQuery) {
       fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
         .then((res) => res.json())
