@@ -33,6 +33,7 @@ const BookSchema = new Schema(
     gBooksId: {
       type: String,
       required: true,
+      unique: true,
     },
     gBooksImageUrl: {
       type: String,
