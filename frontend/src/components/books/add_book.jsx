@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 export const AddBook = () => {
   // const { username } = props.currentUser;
-  const [resultArray, setResultArray] = useState([]);
+  // const [resultArray, setResultArray] = useState([]);
+  let resultArray;
   const [searchQuery, setSearchQuery] = useState('');
   // const [thumbnail, setThumbnail] = useState('');
   // const [title, setTitle] = useState('');
@@ -14,8 +15,10 @@ export const AddBook = () => {
       fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}`)
         .then((res) => res.json())
         .then((result) => {
-          setResultArray(result.items);
-          console.log(result.items);
+          // setResultArray((result) => [...resultArray, result.items]);
+          resultArray = result.items;
+          // console.log(result.items, 'resultItems');
+          console.log(resultArray, 'resultArray');
           // console.log(result.items[0]);
           // if (result.items[0].volumeInfo.imageLinks) {
           //   setThumbnail(result.items[0].volumeInfo.imageLinks.smallThumbnail);
