@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Header = (props) => {
   const { loggedIn, currentUser } = props;
-  const menuItems = ['My Bookshelf', 'Wish List', 'Recommendation List'];
+  const menuItems = ['My Bookshelf', 'Wish List', 'Recommendations'];
 
   if (!loggedIn) {
     return null;
@@ -14,7 +14,7 @@ export const Header = (props) => {
           <span className='capitalize italic'>{currentUser.username}</span>!
         </div>
         <div>
-          <ul>
+          <ul className='flex j-evenly a-center'>
             {menuItems.map((menuItem, i) => (
               <li key={i}>{menuItem}</li>
             ))}
