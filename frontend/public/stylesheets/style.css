@@ -25,6 +25,7 @@ header {
   text-transform: uppercase;
   background-color: peachpuff;
   padding: 0.8em 0;
+  line-height: 1.2em;
 }
 
 .header-links li {
@@ -62,7 +63,6 @@ a:visited {
 a:hover {
   text-decoration: underline;
   color: black;
-  font-family: inherit;
 }
 
 input {

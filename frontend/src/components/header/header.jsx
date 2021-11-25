@@ -19,7 +19,7 @@ export const Header = (props) => {
           <span className='capitalize italic'>{currentUser.username}</span>!
         </div>
         <div>
-          <ul className='flex j-evenly a-center header-links'>
+          <ul className='flex j-evenly a-end header-links'>
             {menuItems.map((menuItem, i) => (
               <li key={i}>
                 <NavLink to={menuItem.url}>{menuItem.title}</NavLink>
