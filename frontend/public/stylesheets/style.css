@@ -19,6 +19,16 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: peachpuff;
+  padding: 0.8em 0;
+}
+
+.header-links li {
+  margin: 0 0.5em;
 }
 
 h1 {
