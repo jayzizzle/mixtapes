@@ -55,13 +55,14 @@ h3 {
 a:link,
 a:visited {
   text-decoration: none;
-  color: orange;
+  color: inherit;
+  font-family: inherit;
 }
 
 a:hover {
   text-decoration: underline;
-  font-family: 'Lora', serif;
   color: black;
+  font-family: inherit;
 }
 
 input {

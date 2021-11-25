@@ -11,7 +11,7 @@ export const Dashboard = (props) => {
         Welcome back, <span className='capitalize italic'>{username}</span>!
       </p>
       <br />
-      <ul>
+      <ul className='orange'>
         <li>
           <Link to='/addbook'>Add A Book</Link>
         </li>
