@@ -11,6 +11,16 @@ body {
   font-family: 'Lora', serif;
 }
 
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+}
+
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 2em;
