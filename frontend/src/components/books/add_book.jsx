@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { SearchResults } from './search_results';
 
 export const AddBook = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -46,6 +45,11 @@ export const AddBook = () => {
                 )}
                 <br />
                 {book.volumeInfo.title}
+                &nbsp;by&nbsp;
+                {book.volumeInfo.authors.length > 1
+                  ? book.volumeInfo.authors[0]
+                  : null}
+                {console.log(book.volumeInfo.authors)}
               </li>
             ))
           : null}
