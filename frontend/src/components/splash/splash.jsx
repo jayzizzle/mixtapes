@@ -5,7 +5,7 @@ export const Splash = () => {
   return (
     <div>
       <h1>On Read</h1>
-      <ul>
+      <ul className='orange'>
         <li>
           <Link to='/register'>Register</Link>
         </li>

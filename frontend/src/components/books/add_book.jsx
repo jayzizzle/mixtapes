@@ -19,7 +19,7 @@ export const AddBook = () => {
   };
 
   return (
-    <div>
+    <div className='main'>
       <h2>Add a Book</h2>
       <form onSubmit={handleSubmit}>
         <input
