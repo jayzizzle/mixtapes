@@ -41,7 +41,9 @@ export const AddBook = () => {
                     alt={book.volumeInfo.title}
                   />
                 ) : (
-                  <p>No Image Available</p>
+                  <p>
+                    <strong>No Image Available</strong>
+                  </p>
                 )}
                 <br />
                 {book.volumeInfo.title}
