@@ -46,8 +46,8 @@ export const AddBook = () => {
                 <br />
                 {book.volumeInfo.title}
                 &nbsp;by&nbsp;
-                {book.volumeInfo.authors.length > 1
-                  ? book.volumeInfo.authors[0]
+                {book.volumeInfo.authors.length > 0
+                  ? book.volumeInfo.authors.map((author) => author)
                   : null}
                 {console.log(book.volumeInfo.authors)}
               </li>
