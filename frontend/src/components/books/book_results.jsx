@@ -6,10 +6,12 @@ export const BookResults = (props) => {
   const displayAuthors = (authors) => {
     if (!authors) return 'No Author Listed';
     let authorCount = authors.length;
-
-    switch (authorCount) {
-      case 1:
+    console.log(authors);
+    switch (true) {
+      case authorCount === 1:
         return authors;
+      case authorCount > 1:
+        return 'Multiple Authors';
       default:
         return 'No Author Listed';
     }
