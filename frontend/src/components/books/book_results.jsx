@@ -11,7 +11,7 @@ export const BookResults = (props) => {
       case 1:
         return authors;
       default:
-        return 'Error';
+        return 'No Author Listed';
     }
   };
 
