@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BookResults } from './book_results';
 
 export const AddBook = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,31 +32,7 @@ export const AddBook = () => {
         <button>Search</button>
       </form>
       <br />
-      <ul>
-        {books
-          ? books.map((book) => (
-              <li key={book.id}>
-                {book.volumeInfo.imageLinks ? (
-                  <img
-                    src={book.volumeInfo.imageLinks.smallThumbnail}
-                    alt={book.volumeInfo.title}
-                  />
-                ) : (
-                  <p>
-                    <strong>No Image Available</strong>
-                  </p>
-                )}
-                <br />
-                {book.volumeInfo.title}
-                &nbsp;by&nbsp;
-                {book.volumeInfo.authors.length > 0
-                  ? book.volumeInfo.authors.map((author) => author)
-                  : null}
-                {console.log(book.volumeInfo.authors)}
-              </li>
-            ))
-          : null}
-      </ul>
+      <ul>{books ? books.map((book) => <BookResults book={book} />) : null}</ul>
     </div>
   );
 };
