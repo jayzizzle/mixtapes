@@ -3,6 +3,18 @@ import React from 'react';
 export const BookResults = (props) => {
   const { book } = props;
 
+  const displayAuthors = (authors) => {
+    if (!authors) return 'No Author Listed';
+    let authorCount = authors.length;
+
+    switch (authorCount) {
+      case 1:
+        return authors;
+      default:
+        return 'Error';
+    }
+  };
+
   if (!book) return null;
 
   return (
@@ -18,13 +30,12 @@ export const BookResults = (props) => {
         </p>
       )}
       <br />
-      {console.log(book.volumeInfo.authors)}
       {book.volumeInfo.title}
       &nbsp;by&nbsp;
-      {/* {book.volumeInfo.authors} */}
-      {book.volumeInfo.authors
+      {displayAuthors(book.volumeInfo.authors)}
+      {/* {book.volumeInfo.authors
         ? book.volumeInfo.authors.map((author) => author)
-        : null}
+        : null} */}
     </li>
   );
 };

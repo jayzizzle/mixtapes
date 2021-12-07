@@ -32,7 +32,11 @@ export const AddBook = () => {
         <button>Search</button>
       </form>
       <br />
-      <ul>{books ? books.map((book) => <BookResults book={book} />) : null}</ul>
+      <ul>
+        {books
+          ? books.map((book, i) => <BookResults book={book} key={i} />)
+          : null}
+      </ul>
     </div>
   );
 };
