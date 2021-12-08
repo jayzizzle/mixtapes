@@ -2,11 +2,11 @@ import React from 'react';
 
 export const BookResults = (props) => {
   const { book } = props;
+  const { title, authors, imageLinks, description } = book.volumeInfo;
 
   const displayAuthors = (authors) => {
     if (!authors) return 'No Author Listed';
     let authorCount = authors.length;
-    console.log(authors.join(', '));
     switch (true) {
       case authorCount === 1:
         return authors;
@@ -21,20 +21,27 @@ export const BookResults = (props) => {
 
   return (
     <li key={book.id}>
-      {book.volumeInfo.imageLinks ? (
-        <img
-          src={book.volumeInfo.imageLinks.smallThumbnail}
-          alt={book.volumeInfo.title}
-        />
-      ) : (
-        <p>
-          <strong>No Image Available</strong>
-        </p>
-      )}
-      <br />
-      {book.volumeInfo.title}
-      &nbsp;by&nbsp;
-      {displayAuthors(book.volumeInfo.authors)}
+      <div className='flex'>
+        <div>
+          {imageLinks ? (
+            <img src={imageLinks.smallThumbnail} alt={title} />
+          ) : (
+            <p>
+              <strong>No Image Available</strong>
+            </p>
+          )}
+        </div>
+        <div>
+          {title}
+          <br />
+          {displayAuthors(authors)}
+          <br />
+          {description
+            ? description.substring(0, 42) + '...'
+            : 'No Description Available'}
+          {console.log(book)}
+        </div>
+      </div>
     </li>
   );
 };
