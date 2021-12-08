@@ -2,7 +2,7 @@ import React from 'react';
 
 export const BookResults = (props) => {
   const { book } = props;
-  const { title, authors, imageLinks, description, previewLink } =
+  const { title, authors, imageLinks, description, previewLink, categories } =
     book.volumeInfo;
 
   const displayAuthors = (authors) => {
@@ -24,7 +24,7 @@ export const BookResults = (props) => {
     <li key={book.id}>
       <div className='flex'>
         <div>
-          <a href={previewLink} target='_blank'>
+          <a href={previewLink} target='_blank' rel='noreferrer'>
             {imageLinks ? (
               <img src={imageLinks.smallThumbnail} alt={title} />
             ) : (
@@ -44,6 +44,9 @@ export const BookResults = (props) => {
             ? description.substring(0, 42) + '...'
             : 'No Description Available'}
           {console.log(book)}
+          <br />
+          <br />
+          {categories}
         </div>
       </div>
     </li>
