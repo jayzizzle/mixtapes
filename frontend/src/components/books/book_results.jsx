@@ -6,12 +6,12 @@ export const BookResults = (props) => {
   const displayAuthors = (authors) => {
     if (!authors) return 'No Author Listed';
     let authorCount = authors.length;
-    console.log(authors);
+    console.log(authors.join(', '));
     switch (true) {
       case authorCount === 1:
         return authors;
       case authorCount > 1:
-        return 'Multiple Authors';
+        return authors.join(', ');
       default:
         return 'No Author Listed';
     }
@@ -35,9 +35,6 @@ export const BookResults = (props) => {
       {book.volumeInfo.title}
       &nbsp;by&nbsp;
       {displayAuthors(book.volumeInfo.authors)}
-      {/* {book.volumeInfo.authors
-        ? book.volumeInfo.authors.map((author) => author)
-        : null} */}
     </li>
   );
 };
