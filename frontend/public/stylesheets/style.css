@@ -187,3 +187,11 @@ button:hover {
 .orange {
   color: orange;
 }
+
+.box-wrapper {
+  margin: 2em 0;
+  padding: 1em;
+  border: 1px solid orange;
+  background-color: peachpuff;
+  font-size: 0.8em;
+}

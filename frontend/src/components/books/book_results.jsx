@@ -22,7 +22,7 @@ export const BookResults = (props) => {
 
   return (
     <li key={book.id}>
-      <div className='flex'>
+      <div className='flex box-wrapper'>
         <div>
           <a href={previewLink} target='_blank' rel='noreferrer'>
             {imageLinks ? (
