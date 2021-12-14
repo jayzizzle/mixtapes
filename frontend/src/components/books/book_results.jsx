@@ -22,19 +22,25 @@ export const BookResults = (props) => {
 
   return (
     <li key={book.id}>
-      <div className='flex box-wrapper'>
-        <div>
+      <div className='flex result-wrapper'>
+        <div className='flex j-center result-image-wrapper'>
           <a href={previewLink} target='_blank' rel='noreferrer'>
             {imageLinks ? (
-              <img src={imageLinks.smallThumbnail} alt={title} />
+              <img
+                src={imageLinks.smallThumbnail}
+                alt={title}
+                className='result-image'
+              />
             ) : (
-              <p>
-                <strong>No Image Available</strong>
-              </p>
+              <div className='flex j-center a-center result-image-none'>
+                <p>
+                  <strong>Image Not Available</strong>
+                </p>
+              </div>
             )}
           </a>
         </div>
-        <div>
+        <div className='result-details'>
           {title}
           <br />
           {displayAuthors(authors)}

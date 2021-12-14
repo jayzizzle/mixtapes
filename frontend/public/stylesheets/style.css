@@ -188,10 +188,36 @@ button:hover {
   color: orange;
 }
 
-.box-wrapper {
+.result-wrapper {
   margin: 2em 0;
   padding: 1em;
   border: 1px solid orange;
-  background-color: peachpuff;
+  border-radius: 4px;
+  /* background-color: peachpuff; */
   font-size: 0.8em;
+}
+
+.result-image {
+  min-width: 5em;
+  max-width: 5em;
+  height: auto;
+}
+
+.result-image-wrapper {
+  min-width: 5em;
+  max-width: 5em;
+}
+
+.result-image-none {
+  min-width: 5em;
+  min-height: 10em;
+  font-size: 0.6em;
+  padding: 0.5em;
+  text-align: center;
+  line-height: 1.5em;
+  background-color: #ccc;
+}
+
+.result-details {
+  padding: 0 1em;
 }
