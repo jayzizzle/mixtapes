@@ -172,6 +172,10 @@ button:hover {
   align-items: space-evenly;
 }
 
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -188,18 +192,26 @@ button:hover {
   text-transform: uppercase;
 }
 
+.large {
+  font-size: 1.4em;
+}
+
 .small {
   font-size: 0.8em;
+}
+
+.white {
+  color: white;
+}
+
+.orange {
+  color: orange;
 }
 
 .tag {
   border-radius: 8px;
   background-color: peachpuff;
   padding: 0.3em 0.8em;
-}
-
-.orange {
-  color: orange;
 }
 
 .result-wrapper {
@@ -224,14 +236,20 @@ button:hover {
 
 .result-image-none {
   min-width: 5em;
-  min-height: 10em;
+  min-height: 11em;
   font-size: 0.6em;
+  font-weight: bold;
   padding: 0.5em;
   text-align: center;
-  line-height: 1.5em;
-  background-color: #ccc;
+  line-height: 1.8em;
+  background-color: #eee;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
 }
 
 .result-details {
   padding: 0 1em;
+  inline-size: 25em;
+  overflow-wrap: break-word;
+  hyphens: manual;
 }

@@ -41,13 +41,13 @@ export const BookResults = (props) => {
           </a>
         </div>
         <div className='result-details'>
-          <span className='bold'>{title}</span>
+          <span className='poppins large bold'>{title}</span>
           <br />
-          {displayAuthors(authors)}
+          <span className='italic'>{displayAuthors(authors)}</span>
           <br />
           <br />
           {description
-            ? description.substring(0, 42) + '...'
+            ? description.substring(0, 140) + '...'
             : 'No Description Available'}
           {console.log(book)}
           <br />
