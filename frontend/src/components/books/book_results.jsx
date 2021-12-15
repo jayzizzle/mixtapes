@@ -41,7 +41,7 @@ export const BookResults = (props) => {
           </a>
         </div>
         <div className='result-details'>
-          {title}
+          <span className='bold'>{title}</span>
           <br />
           {displayAuthors(authors)}
           <br />
@@ -52,7 +52,9 @@ export const BookResults = (props) => {
           {console.log(book)}
           <br />
           <br />
-          {categories}
+          {categories ? (
+            <span className='tag small bold'>{categories}</span>
+          ) : null}
         </div>
       </div>
     </li>

@@ -184,6 +184,20 @@ button:hover {
   text-transform: capitalize;
 }
 
+.upcase {
+  text-transform: uppercase;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.tag {
+  border-radius: 8px;
+  background-color: peachpuff;
+  padding: 0.3em 0.8em;
+}
+
 .orange {
   color: orange;
 }
