@@ -49,12 +49,15 @@ export const BookResults = (props) => {
           {description
             ? description.substring(0, 140) + '...'
             : 'No Description Available'}
-          {console.log(book)}
           <br />
           <br />
           {categories ? (
             <span className='tag small bold'>{categories}</span>
           ) : null}
+          <br />
+          <br />
+          <button>Add To Bookshelf</button>&nbsp;
+          <button>Add To Wishlist</button>
         </div>
       </div>
     </li>
