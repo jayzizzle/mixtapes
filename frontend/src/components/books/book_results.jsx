@@ -18,6 +18,20 @@ export const BookResults = (props) => {
     }
   };
 
+  const saveBook = (bookObject, destination) => {
+    const { title, authors, imageLinks, description, previewLink, categories } =
+      bookObject.volumeInfo;
+    const book = {
+      title: title,
+      authors: authors,
+      thumbnail: imageLinks.smallThumbnail,
+      description: description,
+      previewLink: previewLink,
+      categories: categories,
+    };
+    console.log(book, destination);
+  };
+
   if (!book) return null;
 
   return (
@@ -56,7 +70,10 @@ export const BookResults = (props) => {
           ) : null}
           <br />
           <br />
-          <button>Add To Bookshelf</button>&nbsp;
+          <button onClick={() => saveBook(book, 'bookshelf')}>
+            Add To Bookshelf
+          </button>
+          &nbsp;
           <button>Add To Wishlist</button>
         </div>
       </div>
