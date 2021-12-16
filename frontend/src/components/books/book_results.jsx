@@ -29,6 +29,20 @@ export const BookResults = (props) => {
       previewLink: previewLink,
       categories: categories,
     };
+    switch (destination) {
+      case 'bookshelf':
+        console.log('Add To Bookshelf');
+        console.log(book);
+        return;
+      case 'wishlist':
+        console.log('Add To Wishlist');
+        console.log(book);
+        return;
+      default:
+        console.log('No destination specified.');
+        break;
+    }
+
     console.log(book, destination);
   };
 
@@ -74,7 +88,9 @@ export const BookResults = (props) => {
             Add To Bookshelf
           </button>
           &nbsp;
-          <button>Add To Wishlist</button>
+          <button onClick={() => saveBook(book, 'wishlist')}>
+            Add To Wishlist
+          </button>
         </div>
       </div>
     </li>
