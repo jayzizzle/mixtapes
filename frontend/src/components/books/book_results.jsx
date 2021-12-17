@@ -18,31 +18,39 @@ export const BookResults = (props) => {
     }
   };
 
+  const saveBookObject = (book) => {
+    return { [book.id]: book };
+  };
+
   const saveBook = (bookObject, destination) => {
     const { title, authors, imageLinks, description, previewLink, categories } =
       bookObject.volumeInfo;
     const book = {
+      id: bookObject.id,
       title: title,
       authors: authors,
-      thumbnail: imageLinks.smallThumbnail,
-      description: description,
+      thumbnail: imageLinks ? imageLinks.smallThumbnail : null,
+      description: description ? description : null,
       previewLink: previewLink,
       categories: categories,
     };
+    let newBookObject;
+
     switch (destination) {
       case 'bookshelf':
         console.log('Add To Bookshelf');
-        console.log(book);
+        newBookObject = saveBookObject(book);
+        console.log(newBookObject);
         return;
       case 'wishlist':
         console.log('Add To Wishlist');
-        console.log(book);
+        newBookObject = saveBookObject(book);
+        console.log(bookObject);
         return;
       default:
         console.log('No destination specified.');
         break;
     }
-
     console.log(book, destination);
   };
 
