@@ -28,11 +28,14 @@ export const BookResults = (props) => {
     const book = {
       id: bookObject.id,
       title: title,
-      authors: authors,
-      thumbnail: imageLinks ? imageLinks.smallThumbnail : null,
+      authors: authors ? authors : null,
+      thumbnail:
+        imageLinks && imageLinks.smallThumbnail
+          ? imageLinks.smallThumbnail
+          : null,
       description: description ? description : null,
-      previewLink: previewLink,
-      categories: categories,
+      previewLink: previewLink ? previewLink : null,
+      categories: categories ? categories : null,
     };
     let newBookObject;
 
