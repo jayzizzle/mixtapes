@@ -18,7 +18,7 @@ const UserSchema = new Schema(
       required: true,
     },
     // books: [Schema.Types.Mixed],
-    ownedBooks: [
+    books: [
       {
         gBookId: { type: String, required: true },
         title: { type: String, required: true },
