@@ -19,7 +19,8 @@ export const BookResults = (props) => {
   };
 
   const saveBookObject = (book) => {
-    return { book };
+    // FIGURE OUT HOW TO SAVE TO DB HERE !
+    return book;
   };
 
   const saveBook = (bookObject, destination) => {
@@ -37,7 +38,7 @@ export const BookResults = (props) => {
       previewLink: previewLink ? previewLink : null,
       categories: categories ? categories : null,
     };
-    console.log('first', book);
+
     let newBookObject;
 
     switch (destination) {
