@@ -10,7 +10,7 @@ export const BookResults = (props) => {
     let authorCount = authors.length;
     switch (true) {
       case authorCount === 1:
-        return authors;
+        return authors[0];
       case authorCount > 1:
         return authors.join(', ');
       default:
@@ -19,7 +19,7 @@ export const BookResults = (props) => {
   };
 
   const saveBookObject = (book) => {
-    return { [book.id]: book };
+    return { book };
   };
 
   const saveBook = (bookObject, destination) => {
@@ -37,6 +37,7 @@ export const BookResults = (props) => {
       previewLink: previewLink ? previewLink : null,
       categories: categories ? categories : null,
     };
+    console.log('first', book);
     let newBookObject;
 
     switch (destination) {

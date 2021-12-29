@@ -18,7 +18,7 @@ const UserSchema = new Schema(
       required: true,
     },
     // books: [Schema.Types.Mixed],
-    books: [
+    ownedBooks: [
       {
         gBookId: { type: String, required: true },
         title: { type: String, required: true },
@@ -26,7 +26,25 @@ const UserSchema = new Schema(
         thumbnail: { type: String, default: null },
         description: { type: String, default: null },
         previewLink: { type: String, default: null },
-        categories: { type: String, default: null },
+        categories: [],
+        isDone: { type: Boolean, default: false },
+        isReading: { type: Boolean, default: false },
+        isRecommended: { type: Boolean, default: false },
+        review: { type: String, dafault: null },
+        rating: { type: Number, default: null },
+        notes: { type: String, default: null },
+      },
+    ],
+    wishList: [
+      {
+        gBookId: { type: String, required: true },
+        title: { type: String, required: true },
+        authors: { type: String, default: null },
+        thumbnail: { type: String, default: null },
+        description: { type: String, default: null },
+        previewLink: { type: String, default: null },
+        categories: [],
+        notes: { type: String, default: null },
       },
     ],
   },
