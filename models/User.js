@@ -17,6 +17,18 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    // books: [Schema.Types.Mixed],
+    books: [
+      {
+        gBookId: { type: String, required: true },
+        title: { type: String, required: true },
+        authors: { type: String, default: null },
+        thumbnail: { type: String, default: null },
+        description: { type: String, default: null },
+        previewLink: { type: String, default: null },
+        categories: { type: String, default: null },
+      },
+    ],
   },
   { timestamps: true }
 );

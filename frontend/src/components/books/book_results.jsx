@@ -26,9 +26,9 @@ export const BookResults = (props) => {
     const { title, authors, imageLinks, description, previewLink, categories } =
       bookObject.volumeInfo;
     const book = {
-      id: bookObject.id,
+      gBookId: bookObject.id,
       title: title,
-      authors: authors ? authors : null,
+      authors: displayAuthors(authors),
       thumbnail:
         imageLinks && imageLinks.smallThumbnail
           ? imageLinks.smallThumbnail
