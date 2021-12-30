@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export const patchBooks = (book) => {
-  return axios.get(`api/books/${userId}/bookshelf/addbook`, book);
+export const patchBookshelf = (book, userId) => {
+  return axios.patch(`api/books/${userId}/bookshelf/addbook`, book);
 };
