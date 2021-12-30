@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { BookResults } from './book_results';
 
-export const AddBook = () => {
+export const AddBook = (props) => {
+  const { patchBookshelf, userId } = props;
+
   const [searchQuery, setSearchQuery] = useState('');
   const [books, setBooks] = useState(null);
 
@@ -34,7 +36,14 @@ export const AddBook = () => {
       <br />
       <ul>
         {books
-          ? books.map((book, i) => <BookResults book={book} key={i} />)
+          ? books.map((book, i) => (
+              <BookResults
+                book={book}
+                key={i}
+                patchBookshelf={patchBookshelf}
+                userId={userId}
+              />
+            ))
           : null}
       </ul>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const BookResults = (props) => {
-  const { book } = props;
+  const { book, patchBookshelf, userId } = props;
   const { title, authors, imageLinks, description, previewLink, categories } =
     book.volumeInfo;
 
@@ -20,6 +20,7 @@ export const BookResults = (props) => {
 
   const saveBookObject = (book) => {
     // FIGURE OUT HOW TO SAVE TO DB HERE !
+    patchBookshelf(book, userId);
     return book;
   };
 
