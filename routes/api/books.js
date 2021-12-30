@@ -6,11 +6,11 @@ const keys = require('../../config/keys');
 const User = require('../../models/User');
 
 router.patch(
-  '/:username/bookshelf/addbook',
+  '/:userId/bookshelf/addbook',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     User.findOneAndUpdate(
-      { username: req.params.username },
+      { _id: req.params.userId },
       { $push: { books: req.body } }
     )
       .then((book) => res.json(book))
