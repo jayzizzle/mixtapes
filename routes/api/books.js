@@ -6,13 +6,15 @@ const keys = require('../../config/keys');
 const User = require('../../models/User');
 
 router.patch(
-  '/user/:username/addbook/:gBookId',
+  '/:username/bookshelf/addbook',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     User.findOneAndUpdate(
       { username: req.params.username },
       { $push: { books: req.body } }
-    );
+    )
+      .then((book) => res.json(book))
+      .catch((error) => res.json(error));
   }
 );
 
