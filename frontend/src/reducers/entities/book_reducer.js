@@ -1,12 +1,11 @@
-import { RECEIVE_BOOK } from '../../actions/book_actions';
+import { RECEIVE_BOOKSHELF } from '../../actions/book_actions';
 
 const BookReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  let newState = Object.assign({}, oldState);
+  // let newState = Object.assign({}, oldState);
   switch (action.type) {
-    case RECEIVE_BOOK:
-      newState[action.book.gBookId] = action.book;
-      return newState;
+    case RECEIVE_BOOKSHELF:
+      return action.books;
     default:
       return oldState;
   }

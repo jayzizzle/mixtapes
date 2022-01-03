@@ -13,7 +13,7 @@ router.patch(
       { _id: req.params.userId },
       { $push: { books: req.body } }
     )
-      .then((book) => res.json(book))
+      .then((user) => res.json(user.books))
       .catch((error) => res.json(error));
   }
 );
