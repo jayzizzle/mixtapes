@@ -11,7 +11,8 @@ router.patch(
   (req, res) => {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $push: { books: req.body } }
+      { $push: { books: req.body } },
+      { new: true }
     )
       .then((user) => res.json(user.books))
       .catch((error) => res.json(error));

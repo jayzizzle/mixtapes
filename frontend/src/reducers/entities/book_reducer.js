@@ -5,7 +5,7 @@ const BookReducer = (oldState = {}, action) => {
   // let newState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_BOOKSHELF:
-      return action.books;
+      return action.books.data;
     default:
       return oldState;
   }

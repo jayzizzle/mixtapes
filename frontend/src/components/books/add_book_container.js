@@ -4,6 +4,7 @@ import { AddBook } from './add_book';
 
 const mSTP = (state) => ({
   userId: state.session.user.id,
+  bookshelf: state.entities.bookshelf,
 });
 
 const mDTP = (dispatch) => ({
