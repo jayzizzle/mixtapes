@@ -9,9 +9,9 @@ router.get(
   '/:userId/bookshelf',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    User.findById({ _id: req.params.userId }).then((user) =>
-      res.json(user.books)
-    );
+    User.findById({ _id: req.params.userId })
+      .then((user) => res.json(user.books))
+      .catch((error) => res.json(error));
   }
 );
 

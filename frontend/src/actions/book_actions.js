@@ -7,6 +7,11 @@ const receiveBookshelf = (books) => ({
   books,
 });
 
+export const getBookshelf = (userId) => (dispatch) =>
+  APIUtil.getBookshelf(userId).then((books) =>
+    dispatch(receiveBookshelf(books))
+  );
+
 export const patchBookshelf = (book, userId) => (dispatch) =>
   APIUtil.patchBookshelf(book, userId).then((books) =>
     dispatch(receiveBookshelf(books))
