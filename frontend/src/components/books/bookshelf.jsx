@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 
 export const Bookshelf = (props) => {
-  const { userId, bookshelf, getBookshelf } = props;
+  const { userId, getBookshelf } = props;
 
   useEffect(() => {
     getBookshelf(userId);
-  }, [getBookshelf, userId]);
+  }, [userId, getBookshelf]);
 
-  if (!bookshelf) return null;
+  if (!props.bookshelf) return null;
+
   return (
     <div>
       <h3>My Bookshelf</h3>
       <p>These are my books.</p>
       <ul>
-        {bookshelf.map((book, i) => (
+        {props.bookshelf.map((book, i) => (
           <li key={i}>{book.title}</li>
         ))}
       </ul>
