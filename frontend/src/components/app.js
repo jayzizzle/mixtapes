@@ -6,7 +6,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import RegisterContainer from './session/register_container';
 import LoginContainer from './session/login_container';
 import { Splash } from './splash/splash';
-// import { AddBook } from './books/add_book';
+import BookshelfContainer from './books/bookshelf_container';
 import AddBookContainer from './books/add_book_container';
 import HeaderContainer from './header/header_container';
 
@@ -14,6 +14,15 @@ const App = () => (
   <>
     <HeaderContainer />
     <Routes>
+      <Route
+        exact
+        path='/bookshelf'
+        element={
+          <AuthRoute>
+            <BookshelfContainer />
+          </AuthRoute>
+        }
+      />
       <Route
         exact
         path='/addbook'

@@ -13,6 +13,9 @@ export const Dashboard = (props) => {
       <br />
       <ul className='orange'>
         <li>
+          <Link to='/bookshelf'>My Bookshelf</Link>
+        </li>
+        <li>
           <Link to='/addbook'>Add A Book</Link>
         </li>
       </ul>
