@@ -15,7 +15,7 @@ export const Bookshelf = (props) => {
       <p>These are my books.</p>
       <ul>
         {props.bookshelf.map((book, i) => (
-          <li key={i}>{book.title}</li>
+          <li key={i}>{`${book.title} - ${book.authors}`}</li>
         ))}
       </ul>
     </div>
