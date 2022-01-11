@@ -16,7 +16,9 @@ export const Bookshelf = (props) => {
       <ul>
         {props.bookshelf.map((book, i) => (
           <li key={i}>
-            <img src={book.thumbnail} alt={book.title} />
+            <a href={book.previewLink} target='_blank' rel='noreferrer'>
+              <img src={book.thumbnail} alt={book.title} />
+            </a>
             {`${book.title} - ${book.authors}`}
           </li>
         ))}
