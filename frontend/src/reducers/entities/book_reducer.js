@@ -1,11 +1,15 @@
 import { RECEIVE_BOOKSHELF } from '../../actions/book_actions';
 
-const BookReducer = (oldState = [], action) => {
+const BookReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   // let newState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_BOOKSHELF:
-      return action.books.data;
+      let bookshelf = {};
+      action.books.data.forEach((book) => {
+        bookshelf[book.gBookId] = book;
+      });
+      return bookshelf;
     default:
       return oldState;
   }
