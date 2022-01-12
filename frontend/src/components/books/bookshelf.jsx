@@ -23,6 +23,10 @@ export const Bookshelf = (props) => {
             <br />
             {book.isDone ? 'Completed' : 'Currently Unread'}
             <br />
+            {book.isReading ? 'Currently Reading' : ''}
+            <br />
+            {book.isRecommended ? 'Recommended' : ''}
+            <br />
           </li>
         ))}
       </ul>
