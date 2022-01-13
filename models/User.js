@@ -35,7 +35,7 @@ const UserSchema = new Schema(
         notes: { type: String, default: null },
       },
     ],
-    wishList: [
+    wishlist: [
       {
         gBookId: { type: String, required: true },
         title: { type: String, required: true },
